@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación</title>
+    <style>
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .no-button {
+            position: absolute;
+        }
+        .container {
+            width: 600px;
+            height: 400px;
+            border: 1px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nidia, quiere ir a tomar un coquita conmigo?</h1>
+    <div class="container">
+        <button class="button yes-button">Si</button>
+        <button class="button no-button">No</button>
+    </div>
+
+    <script>
+        const noButton = document.querySelector('.no-button');
+        const yesButton = document.querySelector('.yes-button');
+        const container = document.querySelector('.container');
+
+        noButton.addEventListener('mouseover', () => {
+            const offsetX = Math.random() * (container.clientWidth - noButton.clientWidth);
+            const offsetY = Math.random() * (container.clientHeight - noButton.clientHeight);
+            noButton.style.left = offsetX + 'px';
+            noButton.style.top = offsetY + 'px';
+        });
+
+        yesButton.addEventListener('click', () => {
+            alert('Sabia que iba a decir que si!');
+        });
+    </script>
+</body>
+</html>
